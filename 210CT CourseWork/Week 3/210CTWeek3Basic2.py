@@ -1,20 +1,21 @@
 numCheck = input("Enter Number: ")
 numberTry = int(numCheck)
-dividerNum = numberTry - 1
+
 
 def primeCheck(number, divider):
     typeCheck = number%divider
     print(typeCheck)
 
-    if typeCheck == 0:
-        print(numCheck + " is not a prime number")
+    if divider > 1:
 
-    elif divider == 1 or divider == 0:
-        print(numCheck + " is a prime number")
+        if typeCheck == 0:
+            print(numCheck + " is not a prime number")
+
+        else:
+            dividerNum = divider - 1
+            primeCheck(numberTry, dividerNum)
 
     else:
-        divider = divider - 1
-        primeCheck(number, divider)
+        print(numCheck + " is a prime number")
 
-primeCheck(numberTry,dividerNum)
-    
+primeCheck(numberTry,numberTry)

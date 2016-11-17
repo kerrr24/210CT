@@ -1,9 +1,9 @@
 numlist = str(input("List of Numbers (With space between them): "))
 numlistsplit = numlist.split(" ")
+numlistsplit.append("")
 listLen = len(numlistsplit)
 
-
-def longSub(i, longestList):
+def longSub(i, longestList, multiple):
 
     print("Current best: " + str(longestList))
     lengList = [numlistsplit[i-1]]
@@ -19,14 +19,14 @@ def longSub(i, longestList):
             if len(lengList) > len(longestList):
                 
                 i = i + 1
-                longSub(i, lengList)
-                
+                longestList = lengList
+                longSub(i, lengList, multiple)
+  
             else:
-                print("HERE")
                 break;
             
         else:
             i = i + 1
-            longSub(i, longestList)
+            longSub(i, longestList, multiple)
             
-longSub(1, [])
+longSub(1, [], [])

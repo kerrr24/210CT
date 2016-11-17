@@ -3,7 +3,7 @@ numlistsplit = numlist.split(" ")
 numlistsplit.append("")
 listLen = len(numlistsplit)
 
-def longSub(i, longestList, multiple):
+def longSub(i, longestList):
 
     print("Current best: " + str(longestList))
     lengList = [numlistsplit[i-1]]
@@ -20,13 +20,13 @@ def longSub(i, longestList, multiple):
                 
                 i = i + 1
                 longestList = lengList
-                longSub(i, lengList, multiple)
+                longSub(i, lengList)
   
             else:
                 break;
             
         else:
             i = i + 1
-            longSub(i, longestList, multiple)
+            longSub(i, longestList)
             
-longSub(1, [], [])
+longSub(1, [])

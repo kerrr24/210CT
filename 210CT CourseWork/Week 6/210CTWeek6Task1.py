@@ -35,35 +35,21 @@ def postorder(tree):
 def in_order(tree):
 
     current = tree
-    stackSetOrder = []
     stackOrder = []
     done = False
 
-    while done == False:
-        if tree.left != None:
-            stackSetOrder.append(current)
-            print(len(stackSetOrder))
-            #print(stackOrder)
-            current = tree.left
+    while done is False:
+        if current != None:
+            stackOrder.append(current)
+            current = current.left
         else:
-            if tree.left == None:
+            if(len(stackOrder)>0):
                current = stackOrder.pop()
-               print(tree.value)
-               current = tree.right
-               print("HERE")
+               print(current.value)
+               current = current.right
                
             else:
                 done = True
-                print(stackOrder)
-        #if(tree.right!=None):
-            
-
-    
-    #if(tree.left!=None):
-        #in_order(tree.left)
-    #print(tree.value)
-    #if(tree.right!=None):
-        #in_order(tree.right)
  
 if __name__ == '__main__':
    

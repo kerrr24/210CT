@@ -1,4 +1,8 @@
 userNum = input("Enter Number: ")
+if "." not in userNum:
+    print("To Check " + userNum + ".0")
+else:
+    print("To Check " + userNum)
 i = 0
 userNumStr = str(userNum)
 pointsUsed = 0
@@ -17,9 +21,3 @@ while i < endi:
         i = i + 1
 
 print("Number of trailing 0's is: " + str((endi - lastNumPos - pointsUsed)))
-        
-        
-
-
-
-

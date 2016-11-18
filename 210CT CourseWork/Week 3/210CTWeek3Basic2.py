@@ -3,12 +3,12 @@ numberTry = int(numCheck)
 
 
 def primeCheck(number, divider):
-    typeCheck = number%divider
-    print(typeCheck)
+    numRemainder = number%divider
+    print(numRemainder)
 
     if divider > 1:
 
-        if typeCheck == 0:
+        if numRemainder == 0:
             print(numCheck + " is not a prime number")
 
         else:

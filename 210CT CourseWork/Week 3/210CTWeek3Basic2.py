@@ -1,27 +1,19 @@
-numCheck = input("Enter Number: ")
+ input("Enter Number: ")
 numberTry = int(numCheck)
-
+dividerNum = numberTry - 1 #sets diver to ojne less than the number being tested
 
 def primeCheck(number, divider):
+    divNumCheck = number%divider #finds remeinder of number
+    print(typeCheck)
 
-    if number == 1:
+    if divNumCheck == 0: #if no reminder than number isnt prime
+        print(numCheck + " is not a prime number")
+
+    elif divider == 1 or divider == 0: #if divider gets to 1 (0 for number = 1) then number is prime
         print(numCheck + " is a prime number")
 
     else:
-        numRemainder = number%divider
-        print(numRemainder)
+        divider = divider - 1
+        primeCheck(number, divider) #recursive call of function with updated values to be used
 
-        if divider > 1:
-
-            if numRemainder == 0:
-                print(numCheck + " is not a prime number")
-
-
-            else:
-                dividerNum = divider - 1
-                primeCheck(numberTry, dividerNum)
-
-        else:
-            print(numCheck + " is a prime number")
-
-primeCheck(numberTry,numberTry - 1)
+primeCheck(numberTry,dividerNum)

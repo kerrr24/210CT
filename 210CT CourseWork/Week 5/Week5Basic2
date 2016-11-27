@@ -1,3 +1,5 @@
+################################################################################
+#This block of code is the Python code provided in class as a starting point 
 class Node(object):
       def __init__(self, value):
           self.value=value
@@ -29,26 +31,28 @@ class List(object):
             
               n=n.next
           print ("List: ",",".join(values))
-          
+
+###############################################################################
+#My editted code
       def delete(self, toDelete):
 
         if toDelete.prev != None:
-            toDelete.prev.next = toDelete.next
+            toDelete.prev.next = toDelete.next #sets the link to the element being removed to the next element of the removed element
             print("1..")
 
         else:
-            self.head = toDelete.next
+            self.head = toDelete.next #if it is the head of the linked list being remove then this sets the head to the deleted elements next element
 
         if toDelete.next != None:
-            toDelete.next.prev = toDelete.prev
+            toDelete.next.prev = toDelete.prev #sets the link from the element being removed to the previous element of the removed element
             print("2..")
 
         else:
-            self.tail = toDelete.prev
+            self.tail = toDelete.prev #if it is the tail value then sets the removed element's previous element to the tail
 
         l.display()
                       
-         
+###############################################################################
 if __name__ == '__main__':
       l=List()
       l.insert(None, Node(4))

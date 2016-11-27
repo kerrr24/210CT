@@ -4,10 +4,11 @@ sqaureparameterNum = int(numberUser)
 currentNum = sqaureparameterNum
 
 while checkDone == False:
-    if sqaureparameterNum >= (currentNum * currentNum):
+    if sqaureparameterNum >= (currentNum * currentNum): #Checks if the square of the current number is less than the parameter set by the user
         print("The highest perfect square is: " + str(currentNum * currentNum))
-        checkDone = True
+        print("With a square root of: " + str(currentNum))
+        checkDone = True #to end the while loop
 
     else:
-        currentNum = currentNum - 1
+        currentNum = currentNum - 1 #Subtracts one for current number to be tryed
         

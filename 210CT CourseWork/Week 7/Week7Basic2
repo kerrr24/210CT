@@ -1,0 +1,78 @@
+import sys
+
+class adjectcyListGraph:
+
+    def __init__(self,value):
+        self.node = value
+        #dictNodesRead readFromFile()
+        self.nodesDict = {'a':['b','f'], 'b':['d','c','e','a'], 'c':['b','j'], 'd':['b','j'], 'e':['b'], 'f':['a','g'], 'g':['h','i','f'], 'h':['g'], 'i':['g'], 'j':['c','d'] }
+
+    def addNode(self, value):
+        self.nodesDict.update({value:None})
+        alg.displayList()
+        #writeFile()
+
+    def addNeighbour(self,value,Neighbour):
+        if None in self.nodesDict[value]:
+            del self.nodesDict[value]
+            self.nodesDict.update({value:Neighbour})
+            alg.displayList()
+            #writeFile()
+        else:
+            self.nodesDict[value].append(Neighbour)
+            alg.displayList()
+            #writeFile()
+
+    def displayList(self):
+        print(self.nodesDict)
+
+    def BreadthFirst(self, graph, nodesList, currentNode, visited,done):
+        queueList = nodesList
+        visitedNodes = visited
+        queueList.append(currentNode)
+        while queueList != []:
+            previousNode = queueList.pop(0)
+            if previousNode not in visitedNodes:
+                visitedNodes.append(previousNode)
+                queueList = queueList + (self.nodesDict[previousNode])
+                alg.BreadthFirst(alg.nodesDict, queueList, previousNode, visitedNodes,done)
+        return(visitedNodes)
+        #writeFile("BreadthFirstvisitedNodes.txt",visitedNodes)
+
+
+    def depthFirst(self, graph, nodesList, currentNode, visited,done):
+        stackList = nodesList
+        visitedNodes = visited
+        stackList.append(currentNode)
+        while stackList != []:
+            #print(visitedNodes)
+            previousNode = stackList.pop()
+            if previousNode not in visitedNodes:
+                visitedNodes.append(previousNode)
+                stackList = stackList + (self.nodesDict[previousNode])
+                alg.depthFirst(alg.nodesDict, stackList, previousNode, visitedNodes,done)
+
+        return(visitedNodes)
+         
+def writeFile(fileName, toSave):
+
+    textFileName = fileName
+    stringToSave = str(toSave)
+
+    try:
+        textfile = open(textFileName, "a")
+        textfile.write(stringToSave)
+        textfile.writelines("\n")
+        textfile.close()
+
+    except:
+        print("File Creation Went Wrong")        
+
+
+alg = adjectcyListGraph(None)
+DFReturn = alg.depthFirst(alg.nodesDict,[],'a',[],False)
+print("Depth First: " + str(DFReturn))
+writeFile("depthFirstvisitedNodes.txt", DFReturn)
+BFReturn = alg.BreadthFirst(alg.nodesDict,[],'a',[],False)
+print("Breadth First: " + str(BFReturn))
+writeFile("BreadthFirstvisitedNodes.txt",BFReturn)

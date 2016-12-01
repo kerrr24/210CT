@@ -3,7 +3,6 @@ import sys
 class adjectcyListGraph:
 
     def __init__(self,value):
-        self.node = value
         #dictNodesRead readFromFile()
         self.nodesDict = {'a':['b','f'], 'b':['d','c','e','a'], 'c':['b','j'], 'd':['b','j'], 'e':['b'], 'f':['a','g'], 'g':['h','i','f'], 'h':['g'], 'i':['g'], 'j':['c','d'] }
 

@@ -28,12 +28,16 @@ class adjectcyListGraph:
     def BreadthFirst(self, graph, nodesList, currentNode, visited,done):
         queueList = nodesList
         visitedNodes = visited
+        unvisitedNodes = sorted(list(self.nodesDict.keys()))
+        print(unvisitedNodes)
+        tempNodeList = []
+        count = 0
         queueList.append(currentNode)
         while queueList != []:
             previousNode = queueList.pop(0)
-            if previousNode not in visitedNodes:
+            if previousNode not in visitedNodes:   
                 visitedNodes.append(previousNode)
-                queueList = queueList + (self.nodesDict[previousNode])
+                queueList = queueList + (sorted(self.nodesDict[previousNode]))
                 alg.BreadthFirst(alg.nodesDict, queueList, previousNode, visitedNodes,done)
         return(visitedNodes)
         #writeFile("BreadthFirstvisitedNodes.txt",visitedNodes)
@@ -48,7 +52,9 @@ class adjectcyListGraph:
             previousNode = stackList.pop()
             if previousNode not in visitedNodes:
                 visitedNodes.append(previousNode)
-                stackList = stackList + (self.nodesDict[previousNode])
+                tempList = sorted(self.nodesDict[previousNode])
+                tempList = tempList[::-1]
+                stackList = stackList + tempList
                 alg.depthFirst(alg.nodesDict, stackList, previousNode, visitedNodes,done)
 
         return(visitedNodes)

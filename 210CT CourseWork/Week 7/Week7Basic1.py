@@ -4,7 +4,6 @@ class adjectcyListGraph:
 
     def __init__(self,value):
 
-        self.node = value
         self.nodesDict = {'k':['None'],'a':['d','j','c'], 'b':['d','g'], 'c':['h','i'], 'd':['b','a','e'], 'e':['f','d'], 'f':['e','a'], 'g':['h'], 'h':['c','i'], 'i':['c','h'], 'j':['b','e'] }
 
     def addNode(self, value):

@@ -24,7 +24,7 @@ while i < endi:
     else:
         i = i + 1
 listOfchecknums = ['1','2','3','4','5','6','7','8','9']
-if userNumList[i- 2] in listOfchecknums  and userNumList[i-1] == '0': : #check to see if only one 0 at end
+if userNumList[i- 2] in listOfchecknums  and userNumList[i-1] == '0': #check to see if only one 0 at end
     print("Number of trailing 0's is: 1")
 
 else:

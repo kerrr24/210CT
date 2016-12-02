@@ -1,4 +1,4 @@
-erList = input("Enter values with spaces between: ")
+userList = input("Enter values with spaces between: ")
 userList = userList.split()
 lowestPara = int(input("Lowest Parameter: "))
 highestPara = int(input("Highest Parameter: "))

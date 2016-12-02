@@ -24,7 +24,7 @@ def binarySearch(array):
                 highest = midPoint - 1
                 mipPointStopper = midPoint #sets the stopper to the value of the midPoint so that if the same midPoiint is used again then the if statment won't run as it implies that no element from the list is between the parameters as all midPoints have been used
                 
-            elif int(highestPara) > int(array[midPoint]) and int(lowestPara) < int(array[midPoint]): #checks to see if midPoint is between both parameter set by the user
+            elif int(highestPara) >= int(array[midPoint]) and int(lowestPara) <= int(array[midPoint]): #checks to see if midPoint is between both parameter set by the user
                  print(" A value is in the array between " + str(lowestPara) + " and " + str(highestPara))
                  break; #stops the loop
 

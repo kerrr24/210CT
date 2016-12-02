@@ -23,4 +23,4 @@ def primeCheck(number, divider):
         else: #if divider has reached 1 then this means that the number can only be divided by itself and 1, making it prime
             print(numCheck + " is a prime number")
 
-primeCheck(numberTry,numberTry - 1)
+primeCheck(numberTry,numberTry//2) #divided by two as any whole number can only be divivded wholey by a number lower than half itself

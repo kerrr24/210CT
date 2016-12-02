@@ -1,25 +1,26 @@
 numCheck = input("Enter Number: ")
 numberTry = int(numCheck)
-dividerNum = numberTry - 1 #sets diver to ojne less than the number being tested
+
 
 def primeCheck(number, divider):
 
-    if number == 1:
-        print(numCheck + " is a prime number")
-    else:
-        divNumCheck = number%divider #finds remeinder of number
-        #print(divNumCheck)
-
-    if divNumCheck == 0 and divider != 1: #if no reminder than number isnt prime
-        print(numCheck + " is not a prime number")
-
-    elif divider == 1 or divider == 0: #if divider gets to 1 (0 for number = 1) then number is prime
+    if number == 1: #check to see if number inputted is 1 and if so prints that it is prime
         print(numCheck + " is a prime number")
 
-
     else:
-        divider = divider - 1
-        print(divider)
-        primeCheck(number, divider) #recursive call of function with updated values to be used
+        numRemainder = number%divider #calculates the reminder of two numbers divided
 
-primeCheck(numberTry,dividerNum)
+        if divider > 1: #if the divider hasn't reached 1
+
+            if numRemainder == 0: #if reminder is 0 then number being tested cn be fully divided by another number therefore it isn't prime
+                print(numCheck + " is not a prime number")
+
+
+            else:
+                dividerNum = divider - 1 #decreases the value of the divider
+                primeCheck(numberTry, dividerNum)
+
+        else: #if divider has reached 1 then this means that the number can only be divided by itself and 1, making it prime
+            print(numCheck + " is a prime number")
+
+primeCheck(numberTry,numberTry - 1)

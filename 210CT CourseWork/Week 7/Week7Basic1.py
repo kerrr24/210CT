@@ -4,7 +4,7 @@ class adjectcyListGraph:
 
     def __init__(self,value):
 
-        self.nodesDict = {'k':['None'],'a':['d','j','c'], 'b':['d','g'], 'c':['h','i'], 'd':['b','a','e'], 'e':['f','d'], 'f':['e','a'], 'g':['h'], 'h':['c','i'], 'i':['c','h'], 'j':['b','e'] }
+        self.nodesDict = {'a':['d','j','c'], 'b':['d','g'], 'c':['h','i'], 'd':['b','a','e'], 'e':['f','d'], 'f':['e','a'], 'g':['h'], 'h':['c','i'], 'i':['c','h'], 'j':['b','e'] }
 
     def addNode(self, value):
 
@@ -15,7 +15,7 @@ class adjectcyListGraph:
         if 'None' in self.nodesDict[value]: #As None was set as the valkue ealier, this is used to check if it is still in the values
 
             del self.nodesDict[value] #deletes the None value from the key's values
-            self.nodesDict.update({value:Neighbour})#sets a new value for the key to that entered above
+            self.nodesDict.update({value:[Neighbour]})#sets a new value for the key to that entered above
             alg.displayList() #runs display function
             
         else: #if None has already been removed/not present then the code belwo runs
@@ -33,4 +33,4 @@ class adjectcyListGraph:
 alg = adjectcyListGraph(None)
 alg.addNode('p')
 alg.addNeighbour('p','j')
-alg.addNeighbour('a','l')
+alg.addNeighbour('p','l')

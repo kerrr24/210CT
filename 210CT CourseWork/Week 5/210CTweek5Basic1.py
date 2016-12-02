@@ -1,7 +1,8 @@
-numlist = str(input("List of Numbers (With space between them): "))
+numlist = str(input("List of Numbers With spaces between them): "))
 numlistsplit = numlist.split(" ") #splits numbers on spaces also creates list
 numlistsplit.append("")
 listLen = len(numlistsplit) - 1
+print(numlistsplit)
 done = False
 
 
@@ -38,12 +39,12 @@ def longSub(count, longestList, currentList):
                     print("New Best")
                     longestList = lengList #sets longestlist to the current list being made
                     print(longestList)
-                    longSub(i, longestList, list(numlistsplit[i - 1]))# recursive call with updated values
+                    longSub(i, longestList, [numlistsplit[i - 1]])# recursive call with updated values
                     
                 else:
                     i = i + 1
                     #print(i)
-                    longSub(i, longestList, list(numlistsplit[i - 1]))
+                    longSub(i, longestList, [numlistsplit[i - 1]])
 
       else:
             if int(len(lengList)) > int(len(longestList)): #if the length of the current list is greater than the longestpossible then the following code runs
@@ -58,5 +59,5 @@ def longSub(count, longestList, currentList):
 
 
 print(listLen)
-      
-longSub(1, [], list(numlistsplit[0]))
+    
+longSub(1, [], [numlistsplit[0]])

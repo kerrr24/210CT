@@ -167,6 +167,7 @@ def resultCalculation():
     print("2(B+C) = "+str(multiBaddC))
     endResult = MATRIXSUBTRACTION(BMultiC, multiBaddC, False, True)
     print("B*C - 2(B+C) = " + str(endResult))
+    print("\n" + "A = " + str(endResult))
 
 
 
